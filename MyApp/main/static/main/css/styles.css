@@ -1,0 +1,101 @@
+body {
+    background: rgb(61, 61, 61);
+}
+
+.aside {
+    background: black;
+    height: 80px;    
+    width: 100%;
+}
+
+.aside ul {
+    display: flex;
+    list-style-type: none;
+    padding: 18px;
+}
+
+.aside li {
+    margin-right: 65px;
+}
+
+.aside li a {
+    text-decoration: none;
+    color: gray;
+    font-size: 28px;
+}
+
+footer {
+    color: rgb(214, 205, 205);
+    font-size: 20px;
+}
+
+.main {
+    color: rgb(199, 191, 191);
+    text-align: center;
+}
+
+.main p {
+    margin-top: 80px;
+    font-size: xx-large;
+}
+
+.shop-navigate a button { 
+    margin-top: 50px;
+    margin-right: 50px;    
+    width: 300px;
+    height: 50px;
+}
+
+.shop-line {
+    margin-top: 50px;
+    display: flex;
+}
+
+.main-shop {
+    margin: 0 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+}
+
+.shop-product img {
+    width: 140px;
+    height: 140px;
+}
+
+.shop-product h3 {
+    width: 180px;
+    height: 30px;
+}
+
+.details_product {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.details_product_child {
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: rgb(187, 180, 180);
+    margin-left: 100px;
+}
+
+.price {
+    margin-left: 390px;
+    margin-top: 40px;
+    color: rgb(187, 180, 180);
+}
+
+.details_product_img {
+    width: 1000px;
+    height: 800px;
+    margin-left: 30px;
+}

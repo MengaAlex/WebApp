@@ -1,0 +1,32 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Магазин{% endblock %}
+
+{% block content %}
+        <form action="{% url 'search' %}" method="get">
+            <input type="search" type="text" name="q" placeholder="Поиск по магазину">
+            <button type="submit">Найти</button>
+        </form>  
+    <div class="main">
+        <h1>Магазин</h1>
+        <h3>Одежда только для тебя</h3>
+        <div class="shop-navigate">
+            <a href="{% url 'shop' %}"><button>Новинки</button></a>
+            <a href="{% url 'caps' %}"><button>Головные уборы</button></a>
+            <a href="{% url 'shirts' %}"><button>Рубашки</button></a>
+        </div>
+        <div class="shop-line">
+            {% for el in product %}
+                <div class="main main-shop">
+                    <a href="{% url 'details_product' el.id %}">
+                        <button class="shop-product">                      
+                            <img src="{{ media_url }}{{ el.image }}" alt="{{ el.name }}">
+                            <h3>{{ el.name }}</h3>
+                        </button>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+{% endblock %}
