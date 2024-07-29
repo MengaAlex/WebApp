@@ -10,15 +10,20 @@
 </head>
 <body>
     <aside class="aside">
-        <ul>
-            <li><a href="{% url 'home' %}">Главная</a></li>
-            <li><a href="{% url 'shop' %}">Магазин</a></li>
-            <li><a href="{% url 'profile' %}">Профиль</a></li>         
-        </ul>
+            <li class="aside aside-li"><a href="{% url 'home' %}">Главная</a></li>
+            <li class="aside aside-li"><a href="{% url 'shop' %}">Магазин</a></li>
+            <li class="aside aside-li"><a href="{% url 'profile' %}">Профиль</a></li>   
+            <li class="aside aside-user"><a href="{% url 'home' %}">Вход</a></li>      
     </aside>
     <main>
         {% block content %}
         {% endblock %}
+
     </main>
 </body>
+<footer class="footer">
+    <p>Дизайнер<a href="https://vk.com/menga_jenga"><button>Wanna Live</button></a></p>
+    <p>Обратная связь</p>
+    <p>Discord: menga_alex</p>
+</footer>
 </html>
