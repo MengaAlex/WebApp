@@ -3,32 +3,39 @@
 {% block title %}Магазин{% endblock %}
 
 {% block content %}
-    <form action="{% url 'search' %}" method="get">
-        <input type="search" type="text" name="q" placeholder="Поиск по магазину">
-        <button type="submit">Найти</button>
-    </form>  
+<div class="search">
+    <form class="search search-item" action="{% url 'search' %}" method="get">
+        <div class="form-outline" data-mdb-input-init>
+            <input type="search" type="text" id="form1" class="form-control"  name="q" placeholder="Поиск по магазину"/>
+          </div>
+        <button id="search-button" type="button" class="btn btn-dark">
+            <i class="fas fa-search">Найти</i>
+          </button>
+    </form> 
+</div>  
     <div class=" main">
         <h1>Магазин</h1>
         <h3>Одежда только для тебя</h3>
         <div class="shop-navigate">
-            <a href="{% url 'shop' %}"><button>Новинки</button></a>
-            <a href="{% url 'caps' %}"><button>Головные уборы</button></a>
-            <a href="{% url 'shirts' %}"><button>Рубашки</button></a>
+            <a href="{% url 'shop' %}"><button class="btn btn-dark"><h4>Новинки</h4></button></a>
+            <a href="{% url 'caps' %}"><button class="btn btn-dark"><h4>Головные уборы</h4></button></a>
+            <a href="{% url 'shirts' %}"><button class="btn btn-dark"><h4>Рубашки</h4></button></a>
         </div>
-        {% if product %}
-            {% for el in product %}
-            <div class="main main-shop">
-                <a href="{% url 'details_product' el.id %}">
-                    <button class="shop-product">                        
-                        <img src="{{ media_url }}{{ el.image }}" alt="image for product">
-                        <h3>{{ el.name }}</h3>
-                    </button>
-                </a>
-            </div>
-            {% endfor %}
-        {% else %}
-            <p>В ожидании релиза</p>
-        {% endif %}
-    </div>
+        <div class="shop-container">
+            {% if product %}
+                {% for el in product %}
+                    <div class="shop-container shop-product">
+                        <a href="{% url 'details_product' el.id %}">
+                            <button class="btn btn-dark">                      
+                                <img src="{{ media_url }}{{ el.image }}" alt="{{ el.name }}">
+                                <h3>{{ el.name }}</h3>
+                            </button>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>В ожидании релиза</p>
+            {% endif %}
+        </div>
     
 {% endblock %}

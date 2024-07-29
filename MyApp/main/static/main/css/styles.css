@@ -57,6 +57,8 @@ body {
 
 .shop-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
 }
 
 .shop-product {
